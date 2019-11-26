@@ -9,11 +9,31 @@
   <body>
     <div id="app">
       <h1>Currency Converter</h1>
-      <label for="amount">Amount to Convert: €</label>
-      <input type="number">
-      <select>
-        <option v-for="(rate, currency) in exchangeRates">{{ currency }}</option>
-      </select>
+      <form v-on:submit.prevent="euroExchange">
+
+        <label for="amount">Convert From Euros: €</label>
+        <input type="text" v-model.number="inputtedAmount">
+
+        <select v-model="selectedRate">
+          <option v-for="(rate, currency) in exchangeRates" :value="rate">{{ currency }}</option>
+        </select>
+
+        <input type="submit" value="Calculate">
+      </form>
+
+      <form v-on:submit.prevent="otherExchange">
+        <label for="amount">Convert To Euros: </label>
+
+        <select v-model="selectedRate2">
+          <option v-for="(rate, currency) in exchangeRates" :value="rate">{{ currency }}</option>
+        </select>
+
+        <input type="text" v-model.number="inputtedAmount2">
+
+        <input type="submit" value="Calculate">
+      </form>
+
+      <h1>Calculated: {{ exchanged }}</h1>
     </div>
   </body>
 </html>
