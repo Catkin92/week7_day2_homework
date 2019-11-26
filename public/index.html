@@ -9,7 +9,8 @@
   <body>
     <div id="app">
       <h1>Currency Converter</h1>
-      <input type="number" value="">
+      <label for="amount">Amount to Convert: €</label>
+      <input type="number">
       <select>
         <option v-for="(rate, currency) in exchangeRates">{{ currency }}</option>
       </select>
