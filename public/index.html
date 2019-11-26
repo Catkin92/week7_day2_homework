@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Currency Converter</h1>
+      <input type="number" value="">
+      <select>
+        <option v-for="(rate, currency) in exchangeRates">{{ currency }}</option>
+      </select>
+    </div>
+  </body>
+</html>
